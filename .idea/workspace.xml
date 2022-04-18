@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ecbc9877-59a7-40d7-a04b-27f783ef8370" name="Changes" comment="" />
+    <list default="true" id="ecbc9877-59a7-40d7-a04b-27f783ef8370" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/themes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/themes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Facades/Theme.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Facades/Theme.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Manifest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manifest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Theme.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Theme.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ThemesServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ThemesServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Traits/RegistersViewLocations.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Traits/RegistersViewLocations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/ThemeViewFinder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ThemeViewFinder.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +23,9 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/composer.json" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -21,6 +33,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="277BEL5IxvXzMcvysGuFkWLpoLn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -55,7 +68,7 @@
       <workItem from="1650045367942" duration="596000" />
       <workItem from="1650132835156" duration="1192000" />
       <workItem from="1650142788121" duration="1111000" />
-      <workItem from="1650296935580" duration="93000" />
+      <workItem from="1650296935580" duration="606000" />
     </task>
     <servers />
   </component>

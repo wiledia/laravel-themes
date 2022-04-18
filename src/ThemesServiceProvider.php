@@ -9,59 +9,59 @@ use Wiledia\Themes\View\ThemeViewFinder;
 
 class ThemesServiceProvider extends ServiceProvider
 {
-	/**
-	 * Indicates if loading of the provider is deferred.
-	 *
-	 * @var bool
-	 */
-	protected $defer = false;
+    /**
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
+    protected $defer = false;
 
-	/**
-	 * Boot the service provider.
-	 *
-	 * @return null
-	 */
-	public function boot()
-	{
-		$this->publishes([
-			__DIR__.'/../config/themes.php' => config_path('themes.php')
-		]);
-	}
+    /**
+     * Boot the service provider.
+     *
+     * @return null
+     */
+    public function boot()
+    {
+        $this->publishes([
+            __DIR__ . '/../config/themes.php' => config_path('themes.php')
+        ]);
+    }
 
-	/**
-	 * Register the service provider.
-	 *
-	 * @return void
-	 */
-	public function register()
-	{
-		$this->mergeConfigFrom(
-		    __DIR__.'/../config/themes.php', 'wiledia.themes'
-		);
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/themes.php', 'wiledia.themes'
+        );
 
-		$this->registerServices();
+        $this->registerServices();
         $this->registerNamespaces();
         $this->registerBladeDirectives();
-	}
+    }
 
-	/**
-	 * Get the services provided by the provider.
-	 *
-	 * @return string[]
-	 */
-	public function provides()
-	{
-		return ['wiledia.themes', 'view.finder'];
-	}
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return string[]
+     */
+    public function provides()
+    {
+        return ['wiledia.themes', 'view.finder'];
+    }
 
-	/**
-	 * Register the package services.
-	 */
-	protected function registerServices()
-	{
-		$this->app->singleton('wiledia.themes', function($app) {
+    /**
+     * Register the package services.
+     */
+    protected function registerServices()
+    {
+        $this->app->singleton('wiledia.themes', function ($app) {
             $themes = [];
-            $items  = [];
+            $items = [];
 
             if ($path = config('themes.paths.absolute')) {
                 if (file_exists($path) && is_dir($path)) {
@@ -70,17 +70,17 @@ class ThemesServiceProvider extends ServiceProvider
             }
 
             foreach ($themes as $theme) {
-                $manifest = new Manifest($theme.'/theme.json');
+                $manifest = new Manifest($theme . '/theme.json');
                 $items[] = $manifest;
             }
 
             return new Theme($items);
-		});
+        });
 
-        $this->app->singleton('view.finder', function($app) {
+        $this->app->singleton('view.finder', function ($app) {
             return new ThemeViewFinder($app['files'], $app['config']['view.paths'], null);
         });
-	}
+    }
 
     /**
      * Register the theme namespaces.
@@ -90,7 +90,7 @@ class ThemesServiceProvider extends ServiceProvider
         $themes = app('wiledia.themes')->all();
 
         foreach ($themes as $theme) {
-            app('view')->addNamespace($theme->get('slug'), app('wiledia.themes')->getAbsolutePath($theme->get('slug')).'/views');
+            app('view')->addNamespace($theme->get('slug'), app('wiledia.themes')->getAbsolutePath($theme->get('slug')) . '/views');
         }
     }
 
